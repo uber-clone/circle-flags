@@ -369,13 +369,19 @@
   <div><img src="flags/us-ga.svg" width="96"/><p>Georgia (<code>us-ga</code>)</p></div>
   <div><img src="flags/us-hi.svg" width="96"/><p>Hawaii (<code>us-hi</code>)</p></div>
   <div><img src="flags/us-in.svg" width="96"/><p>Indiana (<code>us-in</code>)</p></div>
+  <div><img src="flags/us-md.svg" width="96"/><p>Maryland (<code>us-md</code>)</p></div>
   <div><img src="flags/us-mo.svg" width="96"/><p>Missouri (<code>us-mo</code>)</p></div>
   <div><img src="flags/us-ms.svg" width="96"/><p>Mississippi (<code>us-ms</code>)</p></div>
   <div><img src="flags/us-nc.svg" width="96"/><p>North Carolina (<code>us-nc</code>)</p></div>
   <div><img src="flags/us-nm.svg" width="96"/><p>New Mexico (<code>us-nm</code>)</p></div>
+  <div><img src="flags/us-or.svg" width="96"/><p>Oregon (<code>us-or</code>)</p></div>
   <div><img src="flags/us-ri.svg" width="96"/><p>Rhode Island (<code>us-ri</code>)</p></div>
+  <div><img src="flags/us-sc.svg" width="96"/><p>South Carolina (<code>us-sc</code>)</p></div>
   <div><img src="flags/us-tn.svg" width="96"/><p>Tennessee (<code>us-tn</code>)</p></div>
   <div><img src="flags/us-tx.svg" width="96"/><p>Texas (<code>us-tx</code>)</p></div>
+  <div><img src="flags/us-wa.svg" width="96"/><p>Washington (<code>us-wa</code>)</p></div>
+  <div><img src="flags/us-wi.svg" width="96"/><p>Wisconsin (<code>us-wi</code>)</p></div>
+  <div><img src="flags/us-wy.svg" width="96"/><p>Wyoming (<code>us-wy</code>)</p></div>
   <div><img src="flags/us-betsy_ross.svg" width="96"/><p>Betsy Ross</p></div>
   <div><img src="flags/us-confederate_battle.svg" width="96"/><p>Confederate battle</p></div>
   <div><img src="flags/um.svg" width="96"/><p>United States Minor Outlying Islands (<code>um</code>)</p></div>
