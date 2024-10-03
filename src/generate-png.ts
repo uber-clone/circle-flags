@@ -5,6 +5,7 @@ import { countriesPhoneCodes } from "./countries-phone-codes.js";
 const flagsSvgDir = `${import.meta.dirname}/../flags`;
 const flagsPngDir = `${flagsSvgDir}/png`;
 const flagsIndex = `${import.meta.dirname}/../images.js`;
+const flagsIndexTypes = `${import.meta.dirname}/../images.d.ts`;
 
 function waitForPromises<T>(
   promises: Promise<T>[],
@@ -56,5 +57,18 @@ for (const countryPhoneCode of countriesPhoneCodes) {
 }
 
 writeFileSync(flagsIndex, generatedFileContent);
+
+generatedFileContent = "";
+
+for (const countryPhoneCode of countriesPhoneCodes) {
+  const iso = countryPhoneCode.iso.toLowerCase();
+  generatedFileContent += `declare const ${iso}Flag: number;\n`;
+}
+
+generatedFileContent += `export { ${countriesPhoneCodes
+  .map((countryPhoneCode) => countryPhoneCode.iso.toLowerCase() + "Flag")
+  .join(", ")} };`;
+
+writeFileSync(flagsIndexTypes, generatedFileContent);
 
 console.log("Done");
