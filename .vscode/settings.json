@@ -1,6 +1,5 @@
 {
-    "editor.formatOnSave": true,
-    "cSpell.words": [
-        "tsup"
-    ]
+  "editor.formatOnSave": true,
+  "cSpell.words": ["tsup"],
+  "typescript.tsserver.experimental.useVsCodeWatcher": false
 }

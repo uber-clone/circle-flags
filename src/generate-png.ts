@@ -1,9 +1,10 @@
 import sharp from "sharp";
-import { mkdirSync, rmSync } from "fs";
+import { mkdirSync, rmSync, writeFileSync } from "fs";
 import { countriesPhoneCodes } from "./countries-phone-codes.js";
 
 const flagsSvgDir = `${import.meta.dirname}/../flags`;
 const flagsPngDir = `${flagsSvgDir}/png`;
+const flagsIndex = `${import.meta.dirname}/../images.js`;
 
 function waitForPromises<T>(
   promises: Promise<T>[],
@@ -46,4 +47,14 @@ for (const countryPhoneCode of countriesPhoneCodes) {
 await waitForPromises(conversions, (index) => {
   console.log(`Completed ${index}/${conversions.length}`);
 });
+
+let generatedFileContent = "";
+
+for (const countryPhoneCode of countriesPhoneCodes) {
+  const iso = countryPhoneCode.iso.toLowerCase();
+  generatedFileContent += `export * as ${iso}Flag from "../flags/${iso}.png";\n`;
+}
+
+writeFileSync(flagsIndex, generatedFileContent);
+
 console.log("Done");
