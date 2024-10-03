@@ -248,3 +248,5 @@ export const countriesPhoneCodes = [
   { country: "Zambia", code: "260", iso: "ZM" },
   { country: "Zimbabwe", code: "263", iso: "ZW" },
 ];
+
+export type CountryPhoneCode = (typeof countriesPhoneCodes)[number];

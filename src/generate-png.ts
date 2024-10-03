@@ -1,7 +1,14 @@
 import sharp from "sharp";
-import { countriesPhoneCodes } from "./countries-phone-codes.mjs";
+import { mkdirSync, rmSync } from "fs";
+import { countriesPhoneCodes } from "./countries-phone-codes.js";
 
-function waitForPromises(promises, onPromiseCompleted) {
+const flagsSvgDir = `${import.meta.dirname}/../flags`;
+const flagsPngDir = `${flagsSvgDir}/png`;
+
+function waitForPromises<T>(
+  promises: Promise<T>[],
+  onPromiseCompleted: (index: number) => void
+) {
   let done = 0;
   onPromiseCompleted(0);
 
@@ -14,6 +21,10 @@ function waitForPromises(promises, onPromiseCompleted) {
   return Promise.all(promises);
 }
 
+// Reset png dir
+rmSync(flagsPngDir, { recursive: true, force: true });
+mkdirSync(flagsPngDir);
+
 const conversions = [];
 
 console.log("Starting image conversions");
@@ -22,13 +33,13 @@ for (const countryPhoneCode of countriesPhoneCodes) {
   const countryCode = countryPhoneCode.iso.toLowerCase();
 
   conversions.push(
-    sharp(`${import.meta.dirname}/flags/${countryCode}.svg`)
+    sharp(`${flagsSvgDir}/${countryCode}.svg`)
       .png()
       .resize({
         width: 64,
         height: 64,
       })
-      .toFile(`${import.meta.dirname}/flags/png/${countryCode}.png`)
+      .toFile(`${flagsPngDir}/${countryCode}.png`)
   );
 }
 
