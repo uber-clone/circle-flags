@@ -1,1 +1,4 @@
-export { CountryPhoneCode } from "./countries-phone-codes.js";
+export {
+  countriesPhoneCodes,
+  CountryPhoneCode,
+} from "./countries-phone-codes.js";
