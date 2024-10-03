@@ -52,7 +52,7 @@ let generatedFileContent = "";
 
 for (const countryPhoneCode of countriesPhoneCodes) {
   const iso = countryPhoneCode.iso.toLowerCase();
-  generatedFileContent += `export * as ${iso}Flag from "../flags/${iso}.png";\n`;
+  generatedFileContent += `export * as ${iso}Flag from "./flags/${iso}.png";\n`;
 }
 
 writeFileSync(flagsIndex, generatedFileContent);
