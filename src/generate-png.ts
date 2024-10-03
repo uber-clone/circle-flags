@@ -53,7 +53,7 @@ let generatedFileContent = "";
 
 for (const countryPhoneCode of countriesPhoneCodes) {
   const iso = countryPhoneCode.iso.toLowerCase();
-  generatedFileContent += `export * as ${iso}Flag from "./flags/${iso}.png";\n`;
+  generatedFileContent += `export * as ${iso} from "./flags/${iso}.png";\n`;
 }
 
 writeFileSync(flagsIndex, generatedFileContent);
@@ -62,11 +62,11 @@ generatedFileContent = "";
 
 for (const countryPhoneCode of countriesPhoneCodes) {
   const iso = countryPhoneCode.iso.toLowerCase();
-  generatedFileContent += `declare const ${iso}Flag: number;\n`;
+  generatedFileContent += `declare const ${iso}: number;\n`;
 }
 
 generatedFileContent += `export { ${countriesPhoneCodes
-  .map((countryPhoneCode) => countryPhoneCode.iso.toLowerCase() + "Flag")
+  .map((countryPhoneCode) => countryPhoneCode.iso.toLowerCase())
   .join(", ")} };`;
 
 writeFileSync(flagsIndexTypes, generatedFileContent);
